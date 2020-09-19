@@ -1,0 +1,45 @@
+<%- include("header") -%>
+  <div class="box" id="heading">
+    <h1> <%= listTitle %> </h1>
+  </div>
+  <div class="dropdowns">
+    <div class="dropdown">
+      <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        create custom list
+      </button>
+      <form class="dropdown-menu dropdown-menu-right p-4" action="/create" method="post">
+      <div class="form-group">
+        <label for="exampleDropdownFormEmail2">List Name</label>
+        <input type="text" class="form-control" name="customListName" id="exampleDropdownFormEmail2" placeholder="ex: work , shopping">
+      </div>
+      <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    </div>
+    <div class="dropdown">
+    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      your To-do lists
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%lists.forEach(function(list){%>
+        <a class="dropdown-item" href="/<%=list.name%>"><%=list.name%></a>
+    <%})%>
+    </div>
+  </div>
+</div>
+  <div class="box boxContent">
+          <% newListItems.forEach(function(item){ %>
+    <form action="/delete" method="post">
+        <div class="item">
+          <input type="checkbox" class="check" name="checkbox" value=<%=item._id%> onChange="this.form.submit()">
+          <p><%=  item.name  %></p>
+        </div>
+        <input type="hidden" name="listName" value=<%=listTitle%>>
+            </form>
+        <% }) %>
+
+      <form class="item" action="/" method="post">
+        <input type="text" name="newItem" class="create-input" placeholder="New Item" autocomplete="off">
+        <button class="button" type="submit" name="list" value=<%=listTitle%>>+</button>
+      </form>
+  </div>
+<%- include("footer") -%>
