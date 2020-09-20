@@ -17,12 +17,14 @@ const dbLink is the remote mongoDB atlas cluster link provided by mongoDB. The l
 2. Extract the Zip files into the desired folder
 3. Inside the terminal, move to directory where the files were extracted
 4. Run the below command in the terminal
-```npm install
+```
+npm install
 ```
 5. Required node modules and dependencies will be installed
 6. Edit the app.js in any of the text editor as said in the above section **Inisde app.js**
 7. Now, run the below command in the terminal
-```node app.js
+```
+node app.js
 ```
 8. The server will be up and running on the port 3000
 9. Open **localhost:3000** in the web browser.
