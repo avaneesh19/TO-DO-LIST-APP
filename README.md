@@ -28,7 +28,7 @@ node app.js
 ```
 8. The server will be up and running on the port 3000
 9. Open **localhost:3000** in the web browser.
-10. To shutdown the server press **ctrl + v** in the terminal.
+10. To shutdown the server press **ctrl + c** in the terminal.
 
 ----
 ### NOTE
